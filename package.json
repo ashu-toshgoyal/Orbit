@@ -1,0 +1,25 @@
+{
+  "name": "orbit",
+  "productName": "Orbit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashu-toshgoyal/Orbit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ashu-toshgoyal/Orbit/issues"
+  },
+  "homepage": "https://github.com/ashu-toshgoyal/Orbit#readme",
+  "devDependencies": {
+    "electron": "^43.2.0"
+  }
+}
