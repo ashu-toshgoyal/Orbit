@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Orbit</title>
 </head>
+
 <body>
     <div class="titlebar"></div>
     <div class="sidebar">
         <div class="sidebar-icon-name">
             <img src="../../../../assets/icons/icon-transparent.png" alt="Orbit Logo">
             <h3>Oribt</h3>
-            
+
             <button name="New Chat" class="new-chatbutton" id="newchat">+ New Chat</button>
             <hr>
             <div class="profilebar">
-                <div class="photo-icon" id="profile-icon"></div>
+                <div class="photo-icon" id="profile-icon">
+                    <span id="profile-icon-text">NS</span>
+                </div>
                 <h4>Name Surname</h4>
                 <br>
                 <h5>Plan</h5>
             </div>
-        </div> 
+        </div>
 
     </div>
-
+    <div class="homebar">
+        <div class="inputbox">
+            <input type="text" name="promtp" placeholder="Ask Orb Anything...." id="promptinput">
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
+
 </html>

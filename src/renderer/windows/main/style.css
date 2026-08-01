@@ -87,7 +87,7 @@
     --button-secondary-hover: #242D4A;
 
     /* =========================
-       STATUS
+    STATUS
     ========================== */
 
     --success: #22C55E;
@@ -110,7 +110,7 @@
     --glass-bg: rgba(20, 27, 48, .65);
     --glass-border: rgba(255,255,255,.08);
 
-       /* =========================
+    /* =========================
     FONT FAMILY
     ========================== */
 
@@ -154,8 +154,15 @@
     --line-normal: 1.5;
     --line-loose: 1.8;
 
-}
+        --input-bg: #141C31;
+    --input-hover: #1A2340;
+    --input-focus: #1E2948;
 
+    --input-border: #27324F;
+    --input-border-hover: #3B4A6B;
+    --input-border-focus: #6C5CFF;
+
+}
 * {
     margin: 0;
     padding: 0;
@@ -163,9 +170,8 @@
 }
 
 body {
-    background: #0B1124;
+    background: var(--bg-app);
     overflow: hidden;
-
 }
 
 .titlebar {
@@ -174,26 +180,25 @@ body {
     display: flex;
     align-items: center;
     padding-left: 80px;
-    /* Space for macOS traffic lights */
     padding-right: 16px;
-    background: #0B1124;
-    /* border-bottom: 1px solid #252A3A; */
-    color: #F5F7FA;
+    background: var(--titlebar-bg);
+    color: var(--text-primary);
     -webkit-app-region: drag;
     user-select: none;
 }
 
-.sidebar{
+.sidebar {
+    user-select: none;
     top: 0px;
     height: 100%;
     width: 24%;
-    background-color: #0B1124;
+    background: var(--sidebar-bg);
     position: absolute;
-    border: 1px solid var(--border-light);
+    border-right: 1px solid var(--border);
     left: 0%;
 }
 
-.sidebar-icon-name{
+.sidebar-icon-name {
     top: 25px;
     display: flex;
     position: absolute;
@@ -201,17 +206,26 @@ body {
     height: 60px;
     width: 100%;
     color: var(--text-primary);
-    cursor:default;
+    cursor: default;
     justify-content: center;
     font-family: var(--font-heading);
     font-size: large;
 }
 
-.sidebar-icon-name img{
+.sidebar-icon-name img {
     height: 70px;
 }
 
-.new-chatbutton{
+.sidebar-icon-name hr {
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: var(--border);
+}
+
+.new-chatbutton {
     position: absolute;
     display: flex;
     height: 50px;
@@ -219,7 +233,7 @@ body {
     top: 62px;
     justify-content: center;
     align-items: center;
-    background-color: var(--button-primary);
+    background: var(--primary);
     color: var(--button-text);
     border: none;
     border-radius: 20px;
@@ -228,11 +242,12 @@ body {
     font-family: var(--font-mono);
 }
 
-.new-chatbutton:hover{
-    background-color: var(--button-hover);
+.new-chatbutton:hover {
+    background: var(--primary-hover);
 }
 
-.profilebar{
+.profilebar {
+    user-select: none;
     display: flex;
     justify-content: center;
     transition: 0.4s background-color ease;
@@ -242,38 +257,95 @@ body {
     top: 690px;
     width: 100%;
     height: 80px;
-    border-radius: 10px ;
-    border-top: 2px solid var(--border-light);
+    border-radius: 10px;
+    border-top: 1px solid var(--border);
+    background: transparent;
 }
 
-.profilebar:hover{
-    background-color: var(--bg-hover);
+.profilebar:hover {
+    background: var(--bg-hover);
 }
 
-.sidebar-icon-name hr{
-    border: 1px solid   #34425F;
-    position: absolute;
-    top: 130px;
-    width: 100%;
-}
-
-.profilebar h4{
+.profilebar h4 {
     position: absolute;
     top: 15px;
     left: 90px;
+    color: var(--text-primary);
 }
 
-.profilebar h5{
+.profilebar h5 {
     position: absolute;
     top: 42px;
+    color: var(--text-muted);
 }
 
-.photo-icon{
+.photo-icon {
     height: 50px;
     width: 50px;
-    border: 2px solid white;
-    border-radius: 100px ;
+    border: 2px solid var(--border-light);
+    border-radius: 100px;
     position: absolute;
     left: 15px;
     top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.homebar {
+    position: absolute;
+    border-left: 1px solid var(--border);
+    left: 24%;
+    height: 100%;
+    top: 0px;
+    width: 910px;
+    background: var(--bg-app);
+}
+
+#promptinput {
+    position: absolute;
+    height: 48px;
+    width: 82%;
+    left: 10%;
+    font-family: var(--font-primary);
+    border-radius: 12px;
+    font-size: var(--font-regular);
+    font-weight: var(--font-light);
+    background: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border);
+    transition: 0.25s;
+    padding-left: 15px;
+}
+
+#promptinput::placeholder {
+    color: var(--text-muted);
+}
+
+#promptinput:hover {
+    background: var(--input-hover);
+    border-color: var(--input-border-hover);
+}
+
+#promptinput:focus {
+    outline: none;
+    background: var(--input-focus);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 92, 255, 0.15);
+}
+
+.inputbox {
+    height: 48px;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: var(--bg-app);
+
 }
