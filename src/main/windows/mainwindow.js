@@ -7,7 +7,9 @@ function mainWindow() {
         titleBarStyle: "hidden",
         width: 1200,
         height: 800,
-        fullscreenable:false
+        resizable:false,
+        maximizable:false,
+        minimizable:true
 
     });
 
